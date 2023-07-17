@@ -151,10 +151,54 @@
 
 // Destruct
 
-// const str = prompt("Enter string");
+// const str = prompt("Enter string more, than 9 symbols");
 // if (str) {
 //    if (str.length >= 9) {
-//       const [letter1, letter5, letter9] = [str[0], str[4], str[8],]
+//       const [letter1, , , , letter5, , , , letter9] = str.split('');
 //       console.log(`Letter 1 is ${letter1}. Letter 5 is ${letter5}. Letter 9 is ${letter9}.`)
 //    }
 // }
+
+
+// Destruct default
+
+// const str = prompt("Enter string");
+// if (str) {
+//    const [, letter2 = "!", , letter4 = "!", letter5 = "!"   ] = str.split('');
+//    console.log(`Letter 2 is ${letter2}. Letter 4 is ${letter4}. Letter 5 is ${letter5}.`)
+// }
+
+
+
+
+// Multiply table rest
+
+// const arr = [
+//    [0, 0, 0, 0, 0, 0],
+//    [0, 1, 2, 3, 4, 5],
+//    [0, 2, 4, 6, 8, 10],
+//    [0, 3, 6, 9, 12, 15],
+//    [0, 4, 8, 12, 16, 20],
+//    [0, 5, 10, 15, 20, 25],
+// ]
+// const [, [, ...arr1], [, ...arr2], [, ...arr3], [, ...arr4], [, ...arr5]] = arr;
+// const newArr = [arr1, arr2, arr3, arr4, arr5];
+
+
+// For Alert
+
+// const arr = ["John", "Paul", "George", "Ringo"];
+// for (let item of arr) {
+//    alert(item);
+// }
+
+
+// For Select Option
+
+// const currencies = ["USD", "EUR", "GBP", "UAH"]
+// let str = "<select>";
+// for (const currency of currencies) {
+//    str += `<option>${currency}</option>`;
+// }
+// str += "</select>"
+// document.write(str)
