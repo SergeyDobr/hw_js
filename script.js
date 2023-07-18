@@ -202,3 +202,72 @@
 // }
 // str += "</select>"
 // document.write(str)
+
+
+// For Table Horizontal
+
+// const names = ["John", "Paul", "George", "Ringo"]
+// let str = "<table>"
+// for (const name of names) {
+//    str += `<td>${name}</td>`;
+// }
+// str += "</table>"
+// document.write(str)
+
+
+// For Table Vertical
+
+// const names = ["John", "Paul", "George", "Ringo"]
+// let str = "<table>"
+// for (const name of names) {
+//    str += `<tr><td>${name}</td></tr>`;
+// }
+// str += "</table>"
+// document.write(str)
+
+
+// For Table Letters
+
+// const currencies = ["USD", "EUR", "GBP", "UAH"]
+// let str = "<table>"
+// for (const currency of currencies) { //цикл створює рядки
+//    str += `<tr>`
+//    for (const letter of currency) { //цикл створює осередки в одному рядку
+//       str += `<td>${letter}</td>`
+//    }
+//    str += `</tr>`
+// }
+// str += "</table>"
+// document.write(str)
+
+
+// For Multiply Table
+
+// const arrs = [
+//    [0, 0, 0, 0, 0, 0],
+//    [0, 1, 2, 3, 4, 5],
+//    [0, 2, 4, 6, 8, 10],
+//    [0, 3, 6, 9, 12, 15],
+//    [0, 4, 8, 12, 16, 20],
+// ];
+// let str = "<table>";
+// for (const arr of arrs) {
+//    str += `<tr>`;
+//    for (const number of arr) {
+//       str += `<td>${number}</td>`
+//    }
+//    str += `</tr>`
+// }
+// str += "</table>"
+// document.write(str)
+
+
+// Map Capitalize
+
+// const str = 'lorem lOREM LOREM LoReM';
+// const arr = str.split(" ");
+// const newArr = arr.map(function (item) {
+//    const [fLetter, ...word] = item.split('');
+//    const sLetters = word.join('').toLowerCase();
+//    return fLetter.toUpperCase() + sLetters;
+// });
