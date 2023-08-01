@@ -85,3 +85,36 @@ const logIn = function (log, pass) {
 }
 
 
+// For Table
+
+const funcTable = function (arrrs) {
+   let str = "<table>";
+   for (const arr of arrrs) {
+      str += `<tr>`;
+      for (const number of arr) {
+         str += `<td>${number}</td>`
+      }
+      str += `</tr>`
+   }
+   return str += "</table>"
+}
+
+
+// Filter Lexics
+
+const checkStringLexics = function (str, arrStopWord) {
+   str = str.split(' ');
+   arrStopWord = arrStopWord.join(' ');
+   const checkFilterLexics = str.filter(function (item) {
+      if (arrStopWord.includes(item)) {
+         return false
+      } else {
+         return true
+      }
+   });
+   return checkFilterLexics.join(' ');
+}
+
+
+// Currency Table
+
