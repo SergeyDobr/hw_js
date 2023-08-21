@@ -13,6 +13,7 @@
    height: 400px;
    padding: 20px;
    text-align: center;
+   position: relative;
 }
 
 h3 {
@@ -32,11 +33,12 @@ input {
    padding: 10px;
 }
 
-.disabled {
-   display: none;
-}
-
-.carousel-control-next-icon {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
    height: 5rem;
    width: 5rem;
+}
+
+.carousel-item div {
+   background-color: #519b6f;
 }
