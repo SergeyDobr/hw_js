@@ -12,46 +12,50 @@
 
 <body>
    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+         <button id="lastIndicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+      </div>
       <div class="carousel-inner">
          <div class="carousel-item active">
             <div class="d-block w-100">
                <h3>Введите логин и пароль</h3>
-               <input placeholder="Login" type="text" id="inputLogin">
-               <input placeholder="Password" type="password" id="inputPassword">
-               <button id="buttonCheck" type="submit">Проверить</button>
+               <input placeholder="Login" type="text" id="email">
+               <input placeholder="Password" type="password" id="password">
             </div>
          </div>
          <div class="carousel-item">
             <div class="d-block w-100">
                <h3>Введите дату рождения, пол и имя</h3>
-               <input type="date" id="inputDate">
-               <input placeholder="Gender" type="text" id="inputGender">
-               <input placeholder="Name" type="text" id="inputName">
-               <button id="buttonCheck2" type="submit">Проверить</button>
+               <input type="date" id="age">
+               <input style="text-align: left; color: #000;" placeholder="Gender" type="text" id="sex">
+               <input placeholder="Name" type="text" id="name">
             </div>
          </div>
-         <div class="carousel-item">
+         <div class="carousel-item" id="lastSlide">
             <div class="d-block w-100">
                <h3>Введите знак зодиака, вес и рост</h3>
-               <input placeholder="Zodiac" type="text" id="inputZodiac">
-               <input placeholder="Weight" type="text" id="inputWeight">
-               <input placeholder="Height" type="text" id="inputHeight">
-               <button id="buttonCheck3" type="submit">Внести данные</button>
-            </div>
-         </div>
-         <div class="carousel-item">
-            <div class="d-block w-100">
-               <h3> <span style="color: aquamarine;">Ваши данные внесены</span> &#x1F609</h3>
+               <input placeholder="Zodiac" type="text" id="zodiac">
+               <input placeholder="Height" type="text" id="height">
+               <button id="buttonCheck" type="submit">Внести данные</button>
             </div>
          </div>
       </div>
-      <button class="carousel-control-next disabled" type="button" data-bs-target="#carouselExampleIndicators"
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+         data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
          data-bs-slide="next">
          <span class="carousel-control-next-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Next</span>
       </button>
    </div>
-
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
