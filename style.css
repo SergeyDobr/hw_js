@@ -1,42 +1,32 @@
-* {
-   box-sizing: border-box;
-}
-
-.fielt {
-   width: 50%;
-   height: 50%;
-   display: block;
-   border: 2px solid black;
-   position: relative;
-}
-
-.fielts {
-   width: 500px;
-   height: 500px;
-   border: 10px solid gray;
-   display: flex;
-   flex-wrap: wrap;
-}
-
-#btn {
-   width: 100px;
-   height: 50px;
-}
-
-#ball {
+.block {
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   width: 30px;
-   height: 30px;
-   background-color: #000;
-   border-radius: 50%;
 }
 
-body {
-   max-width: 1000px;
+.container {
+   width: 500px;
+   height: 500px;
    display: flex;
-   align-items: center;
-   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 10px;
+}
+
+.square {
+   width: 30%;
+   height: 30%;
+   border-radius: 10px;
+   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+   cursor: pointer;
+}
+
+#btnSend {
+   padding: 10px 15px;
+   width: 100%;
+   cursor: pointer;
+}
+
+.cat {
+   background: url('https://bestmemes.ucoz.net/_nw/44/89692088.png') 0 0/contain no-repeat;
 }
