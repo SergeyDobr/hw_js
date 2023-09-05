@@ -11,10 +11,20 @@ const splitArrayIntoChunks = (array, numElem) => {
    }
    return result;
 }
+const updateBtn = () => allBtn.forEach(elem => elem.disabled = false) // убирает disabled со всех кнопок
+
 const updateListCards = () => {
+   updateBtn()
    wrapper.innerHTML = '';
    for (let i of splitArrayIntoChunks(arrAllCards, NUMBER_SHOW_CARD)[allBtn[2].innerHTML - 1]) {
       wrapper.insertAdjacentHTML('beforeend', i)
+   }
+   if (allBtn[2].innerHTML == 1) {
+      allBtn[0].disabled = true;
+      allBtn[1].disabled = true;
+   } else if (allBtn[2].innerHTML == Math.ceil(arrAllCards.length / NUMBER_SHOW_CARD)) {
+      allBtn[3].disabled = true;
+      allBtn[4].disabled = true;
    }
 }
 for (let i = 0; i <= 42; i++) {
@@ -27,12 +37,7 @@ for (let i = 0; i <= 42; i++) {
 </div>`)
 }
 
-for (let i of arrAllCards) {
-   if (i === arrAllCards[NUMBER_SHOW_CARD]) {
-      break
-   }
-   wrapper.insertAdjacentHTML('beforeend', i)
-}
+updateListCards()
 
 allBtn[3].addEventListener('click', () => {
    allBtn[2].innerHTML++;
@@ -46,8 +51,6 @@ allBtn[1].addEventListener('click', () => {
 allBtn[4].addEventListener('click', () => {
    allBtn[2].innerHTML = Math.ceil(arrAllCards.length / NUMBER_SHOW_CARD);
    updateListCards()
-   // allBtn[3].disabled = true;
-   // allBtn[4].disabled = true;
 })
 
 allBtn[0].addEventListener('click', () => {
@@ -57,4 +60,3 @@ allBtn[0].addEventListener('click', () => {
 
 
 
-// const updateBtn = () => allBtn.forEach(elem => elem.disabled = false) // убирает disabled со всех кнопок
