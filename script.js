@@ -46,7 +46,11 @@ const createTubl = (data) => {
       for (const key in item) {
          if (item.hasOwnProperty(key)) {
             const td = document.createElement('td');
+
             td.textContent = item[key];
+            if (td.textContent.includes('https://')) {
+               td.innerHTML = `<img src="${td.textContent}">`
+            }
             tr.appendChild(td);
          }
       }
@@ -72,42 +76,17 @@ btnUpdate.addEventListener('click', () => {
    fetch('https://stage-two.i-wp-dev.com/wp-json/v4/user', {
       method: 'PUT',
       headers: {
-         'Authorization': `Bearer ${jwtToken}`,
+         'Authorization': `Bearer ${MY_TOKEN}`,
          'Content-Type': 'application/json'
       },
       body: JSON.stringify({
          id: +document.querySelector('.userId').value,
          avatar_url: document.querySelector('.avatarUrl').value,
-      }),
+      })
    })
+      .then(response => response.json())
+      .then(data => {
+         console.log(data);
+      })
+
 });
-
-
-
-
-
-
-
-
-
-// function sendData() {
-//     const userId = document.querySelector('.id').value;
-//     const avatar = document.querySelector('.img-url').value;
-//     const changeAvatar = {
-//         id: userId,
-//         avatar_url: avatar,
-//     }
-//     fetch('https://stage-two.i-wp-dev.com/wp-json/v4/user', {
-//         method: 'PUT',
-//         headers: {
-//             'Authorization': `Bearer ${jwtToken}`,
-//             'Content-Type': 'application/json'
-//         },
-
-//         body: JSON.stringify(changeAvatar)
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data);
-//         })
-// }
