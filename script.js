@@ -1,6 +1,6 @@
 const MY_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0YWdlLXR3by5pLXdwLWRldi5jb20vIiwiYXVkIjoiaHR0cHM6Ly9zdGFnZS10d28uaS13cC1kZXYuY29tLyIsImlhdCI6MTM1Njk5OTUyNCwibmJmIjoxMzU3MDAwMDAwLCJkYXRhIjp7ImlkIjoyNiwidXNlcl9lbWFpbCI6ImRhQG5ha29uZXRzdG8uY29tIiwidXNlcl9wYXNzIjoidVJhMTIzUG9sdWNoIWlsb3MifX0.bZUAJkRRGjczHvTwNbGyoKeI686yeeflNRnnP9IMaCo"
 const btnUpdate = document.querySelector('.btnUpdate');
-// 1-E
+
 // fetch('https://stage-two.i-wp-dev.com/wp-json/v4/registration', {
 //    method: 'POST',
 //    body: JSON.stringify({
@@ -41,7 +41,9 @@ const createTubl = (data) => {
 
    // Заполняет таблицу данными из массива объектов
    const tbody = document.createElement('tbody');
+   console.log(data)
    data.forEach(item => {
+
       const tr = document.createElement('tr');
       for (const key in item) {
          if (item.hasOwnProperty(key)) {
@@ -62,15 +64,14 @@ const createTubl = (data) => {
 
 
 // Получаем, сортируем и выводим в таблицу наш массив 
-fetch('https://stage-two.i-wp-dev.com/wp-json/v4/users', {
-   method: 'GET',
-   headers: {
-      'Authorization': `Bearer ${MY_TOKEN}`
-   },
+   fetch('https://stage-two.i-wp-dev.com/wp-json/v4/users', {
+      method: 'GET',
+      headers: {
+         'Authorization': `Bearer ${MY_TOKEN}`
+      },
 })
    .then((response) => response.json())
-   .then((json) => sortArr(json))
-   .then((json) => createTubl(json))
+   .then((json) => createTubl(sortArr(json)))
 
 btnUpdate.addEventListener('click', () => {
    fetch('https://stage-two.i-wp-dev.com/wp-json/v4/user', {
