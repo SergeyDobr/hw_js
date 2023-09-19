@@ -1,36 +1,37 @@
-* {
-   margin: 0;
-   padding: 0;
+.wrapper {
+   max-width: 1000px;
+   margin: 100px auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
 }
 
 body {
-   box-sizing: border-box;
-}
-
-table {
-   border: 1px solid black;
-   margin: 10px;
-   padding: 10px
-}
-
-tr td:nth-child(2),
-tr td:nth-child(3) {
-   width: 200px;
-}
-
-td {
-   width: 200px;
-}
-
-button,
-input {
-   padding: 5px 10px;
-}
-
-div {
-   margin-bottom: 5px;
+   background-color: #7baad8;
 }
 
 img {
-   max-width: 150px;
+   max-width: 300px;
+}
+.picture{
+   text-align: center;
+}
+.letter {
+   background-color: #ccee96;
+   font-size: 50px;
+   border: 3px solid #000;
+   width: 90px;
+   height: 90px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.img {
+   position: relative;
+   z-index: 1;
+   background: url('https://sobakovod.club/uploads/posts/2022-02/1644796912_1-sobakovod-club-p-sobaki-mops-mem-1.jpg') 0 0/contain no-repeat;
+   font-size: 0;
 }
