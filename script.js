@@ -8,13 +8,11 @@ const listOfLetters = document.querySelectorAll('.letter');
 
 const elementsPicture = ['./img/1.png', './img/2.png', './img/3.png', './img/4.png'];
 
-
 function* showElementToPicture() {
   const picture = document.querySelector('.picture');
   for (let i of elementsPicture) {
     yield picture.innerHTML = `<img src="${i}" alt="">`
     if (picture.innerHTML === `<img src="${elementsPicture[elementsPicture.length - 2]}" alt="">`) {
-      listOfLetters.disabled = true
       setTimeout(() => alert("Ты проиграл"), 1000)
     }
   }
@@ -29,3 +27,9 @@ const checkCorretcLetters = (event) => {
     userInput.toUpperCase() === event.target.textContent ? event.target.classList.remove('img') : startShowElementToPicture.next();
   }
 }
+// const checkWinnerGame = (arr) => {
+//   if (arr[i].classList.contains('img')) {
+//     return
+//   }
+//   return alert("Ты победил!")
+// }
